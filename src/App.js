@@ -2,6 +2,7 @@ import './App.css';
 import Header from './Header';
 import Home from './Home';
 import Checkout from './Checkout';
+import Payment from './Payment';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Fragment, useEffect } from 'react';
 import Login from './Login';
@@ -43,25 +44,35 @@ function App() {
       <div className="app">
         <Routes>
 
-        <Route exact path="/login" element= {
-          <Fragment>
-            <Login />
-          </Fragment>
-          }/>
-        
-        <Route exact path="/" element= {
-          <Fragment>
-            <Header />
-            <Home/>
-          </Fragment>
-          }/>
+          <Route exact path="/login" element= {
+            <Fragment>
+              <Login />
+            </Fragment>
+            }/>
+          
 
-        <Route exact path="/checkout" element={
-          <Fragment>
-            <Header />
-            <Checkout />
-          </Fragment>
-        }/>  
+          <Route exact path="/checkout" element={
+            <Fragment>
+              <Header />
+              <Checkout />
+            </Fragment>
+          }/> 
+          
+          
+          <Route exact path="/payment" element={
+            <Fragment>
+              <Header />
+              <Payment />
+            </Fragment>
+          }/>  
+
+
+          <Route exact path="/" element= {
+            <Fragment>
+              <Header />
+              <Home/>
+            </Fragment>
+            }/>
             
 
         </Routes>
